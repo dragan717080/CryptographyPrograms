@@ -19,6 +19,18 @@ pub fn trial_division(n: i64) -> bool {
     is_prime
 }
 
+pub fn gcd(a: i64, b: i64) -> i64 {
+    if b == 0 {
+        a
+    } else {
+        gcd(b, a % b)
+    }
+}
+
+pub fn are_coprime(a: i64, b: i64) -> bool {
+    gcd(a, b) == 1
+}
+
 pub fn distinct_factors(n: i64) -> Vec<i64> {
     let mut factors = Vec::new();
 

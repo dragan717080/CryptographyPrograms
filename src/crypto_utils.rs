@@ -24,7 +24,7 @@ pub fn gcd_euclidean(mut a: i32, mut b: i32) -> i32 {
     a
 }
 
-pub fn find_modular_inverse(mut n: i32, modulo: i32) -> i32 {
+pub fn find_modular_inverse(mut n: i64, modulo: i64) -> i64 {
     let mut mod_inverse = 1;
     while (n * mod_inverse) % modulo != 1 {
         mod_inverse += 1;
@@ -36,4 +36,20 @@ pub fn find_modular_inverse(mut n: i32, modulo: i32) -> i32 {
     }
 
     mod_inverse
+}
+
+pub fn sieve_of_eratosthenes(limit: usize) -> Vec<bool> {
+    let mut sieve = vec![true; limit];
+    sieve[0] = false;
+    sieve[1] = false;
+
+    for num in 2..(limit as f64).sqrt() as usize + 1 {
+        if sieve[num] {
+            for multiple in (num * num..limit).step_by(num) {
+                sieve[multiple] = false;
+            }
+        }
+    }
+
+    sieve
 }

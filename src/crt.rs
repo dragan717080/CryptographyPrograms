@@ -3,8 +3,8 @@ mod crypto_utils;
 use crypto_utils::find_modular_inverse;
 
 struct ModularEquation {
-    divisor: i32,
-    modulo: i32
+    divisor: i64,
+    modulo: i64
 }
 
 fn main() {

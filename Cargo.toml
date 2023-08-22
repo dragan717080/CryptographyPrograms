@@ -1,0 +1,56 @@
+[package]
+name = "cryptography"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+unicode-segmentation = "1.8.0"
+serde = { version = "1.0.183", features = ["derive"] }
+serde_json = "1.0.104"
+rand = "0.8"
+once_cell = "1.5"
+chrono = { version = "0.4", features = ["serde"] }
+humantime = "2.1"
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+num-bigint = "0.4"
+num-traits = "0.2"
+rsa = "0.4.1"
+
+[[bin]]
+name = "vigenere"
+path = "src/vigenere.rs"
+
+[[bin]]
+name = "caesar"
+path = "src/caesar.rs"
+
+[[bin]]
+name = "crt"
+path = "src/crt.rs"
+
+[[bin]]
+name = "rail_fence"
+path = "src/rail_fence.rs"
+
+[[bin]]
+name = "binary"
+path = "src/binary.rs"
+
+[[bin]]
+name = "primality_tests"
+path = "src/primality_tests.rs"
+
+[[bin]]
+name = "diffie_hellman"
+path = "src/diffie_hellman.rs"
+
+[[bin]]
+name = "rsa"
+path = "src/rsa.rs"
+
+[[bin]]
+name = "euler_formulas"
+path = "src/euler_formulas.rs"
